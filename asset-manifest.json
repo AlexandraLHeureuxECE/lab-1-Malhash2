@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/lab-1-Malhash2/static/css/main.dfb93d28.css",
+    "main.js": "/lab-1-Malhash2/static/js/main.24cdaadb.js",
+    "static/js/453.6199c190.chunk.js": "/lab-1-Malhash2/static/js/453.6199c190.chunk.js",
+    "index.html": "/lab-1-Malhash2/index.html",
+    "main.dfb93d28.css.map": "/lab-1-Malhash2/static/css/main.dfb93d28.css.map",
+    "main.24cdaadb.js.map": "/lab-1-Malhash2/static/js/main.24cdaadb.js.map",
+    "453.6199c190.chunk.js.map": "/lab-1-Malhash2/static/js/453.6199c190.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dfb93d28.css",
+    "static/js/main.24cdaadb.js"
+  ]
+}
