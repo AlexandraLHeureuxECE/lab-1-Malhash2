@@ -27,7 +27,7 @@ Make sure you have [Node.js](https://nodejs.org/) installed on your computer.
 
 1.  **Clone the repository** (or download the source code):
     ```bash
-    git clone [https://github.com/AlexandraLHeureuxECE/lab-1-Malhash2.git](https://github.com/AlexandraLHeureuxECE/lab-1-Malhash2.git)
+    git clone https://github.com/AlexandraLHeureuxECE/lab-1-Malhash2.git
     cd tic-tac-toe
     ```
 
