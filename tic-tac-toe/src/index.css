@@ -1,0 +1,251 @@
+/* --- Base Variables & Layout --- */
+:root {
+	--bg-color: #f0f2f5;
+	--text-color: #333;
+	--board-bg: #fff;
+	--square-border: #ddd;
+	--highlight: #61dafb;
+	--highlight-text: #fff;
+	--btn-bg: #333;
+	--btn-text: #fff;
+	--font: 'Segoe UI', sans-serif;
+	--border-radius: 10px;
+	--shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Theme: Dark --- */
+[data-theme="dark"] {
+	--bg-color: #282c34;
+	--text-color: #f0f2f5;
+	--board-bg: #3b4048;
+	--square-border: #555;
+	--highlight: #61dafb;
+	--highlight-text: #000;
+	--btn-bg: #f0f2f5;
+	--btn-text: #282c34;
+}
+
+/* --- Theme: Neon (Cyberpunk) --- */
+[data-theme="neon"] {
+	--bg-color: #050505;
+	--text-color: #0ff;
+	--board-bg: #111;
+	--square-border: #0ff;
+	--highlight: #f0f;
+	--highlight-text: #fff;
+	--btn-bg: #0ff;
+	--btn-text: #000;
+	--font: 'Courier New', monospace;
+	--shadow: 0 0 15px #0ff;
+}
+
+/* --- Theme: Retro (Gameboy) --- */
+[data-theme="retro"] {
+	--bg-color: #8b9bb4;
+	--text-color: #0f380f;
+	--board-bg: #9bbc0f;
+	--square-border: #0f380f;
+	--highlight: #306230;
+	--highlight-text: #9bbc0f;
+	--btn-bg: #0f380f;
+	--btn-text: #9bbc0f;
+	--font: 'Courier New', monospace;
+	--border-radius: 0px;
+	--shadow: 4px 4px 0px #306230;
+}
+
+body {
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	font-family: var(--font);
+	transition: all 0.3s ease;
+}
+
+.game-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+	padding: 20px;
+}
+
+.status {
+	font-size: 1.8rem;
+	font-weight: bold;
+	text-shadow: var(--shadow);
+}
+
+.board {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 8px;
+	background-color: var(--square-border);
+	border: 5px solid var(--square-border);
+	border-radius: var(--border-radius);
+	box-shadow: var(--shadow);
+}
+
+.square {
+	width: 90px;
+	height: 90px;
+	background-color: var(--board-bg);
+	border: none;
+	font-size: 2.5rem;
+	font-weight: bold;
+	cursor: pointer;
+	color: var(--text-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: background-color 0.2s;
+}
+
+.square:hover {
+	filter: brightness(0.9);
+}
+
+.square.winning {
+	background-color: var(--highlight);
+	color: var(--highlight-text);
+	animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(1.05);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+
+/* --- Settings Panel --- */
+.settings-panel {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	background: var(--board-bg);
+	padding: 15px;
+	border-radius: var(--border-radius);
+	border: 2px solid var(--square-border);
+	margin-top: 10px;
+	width: 100%;
+	max-width: 300px;
+}
+
+.setting-group {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+label {
+	font-weight: bold;
+}
+
+select {
+	padding: 5px;
+	border-radius: 5px;
+	border: 1px solid var(--square-border);
+	background: var(--bg-color);
+	color: var(--text-color);
+	font-family: inherit;
+	cursor: pointer;
+}
+
+button.reset-btn {
+	width: 100%;
+	padding: 12px;
+	font-size: 1.1rem;
+	font-weight: bold;
+	cursor: pointer;
+	background-color: var(--btn-bg);
+	color: var(--btn-text);
+	border: none;
+	border-radius: var(--border-radius);
+	box-shadow: var(--shadow);
+	margin-top: 10px;
+}
+
+button.reset-btn:hover {
+	opacity: 0.9;
+}
+
+/* --- Keep your existing CSS from the previous step --- */
+/* (Paste the CSS from the "Neon/Retro" version here first) */
+
+/* ... existing CSS ... */
+
+/* --- ADD THIS TO THE BOTTOM --- */
+
+.game-layout {
+	display: flex;
+	flex-direction: row;
+	/* Side-by-side layout for desktop */
+	gap: 40px;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	/* Wraps on mobile */
+	justify-content: center;
+}
+
+.history-panel {
+	background: var(--board-bg);
+	padding: 15px;
+	border-radius: var(--border-radius);
+	border: 2px solid var(--square-border);
+	box-shadow: var(--shadow);
+	max-width: 250px;
+	width: 100%;
+}
+
+.history-title {
+	font-weight: bold;
+	margin-bottom: 10px;
+	border-bottom: 2px solid var(--square-border);
+	padding-bottom: 5px;
+}
+
+.history-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	max-height: 200px;
+	overflow-y: auto;
+	/* Scroll if list gets long */
+}
+
+.history-btn {
+	width: 100%;
+	margin-bottom: 5px;
+	padding: 8px;
+	background: var(--bg-color);
+	border: 1px solid var(--square-border);
+	color: var(--text-color);
+	cursor: pointer;
+	text-align: left;
+	border-radius: 4px;
+	transition: all 0.2s;
+}
+
+.history-btn:hover {
+	background: var(--highlight);
+	color: var(--highlight-text);
+	border-color: var(--highlight);
+}
+
+.history-btn.active {
+	background: var(--text-color);
+	color: var(--bg-color);
+	font-weight: bold;
+}
